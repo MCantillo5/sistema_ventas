@@ -4,7 +4,7 @@
 
 <h1>Create Category</h1>
 
-@if(session('massage'))
+@if(session('message'))
     <div style="color: green;">{{ session('message') }}</div>
 @endif
 

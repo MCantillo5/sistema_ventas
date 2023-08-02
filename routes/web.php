@@ -20,16 +20,16 @@ Route::get('/categories', [CategoryController::class,'index'])
 Route::get('/categories/create', [CategoryController::class,'create'])
     ->name('categories.create');
 
-Route::get('/categories/create', [CategoryController::class,'store'])
+Route::post('/categories/create', [CategoryController::class,'store'])
     ->name('categories.create');
 
 Route::get('/categories/edit/{category}', [CategoryController::class,'edit'])
     ->name('categories.edit');
 
-Route::get('/categories/edit/{category}', [CategoryController::class,'update'])
+Route::post('/categories/edit/{category}', [CategoryController::class,'update'])
     ->name('categories.edit');
 
-Route::get('/categories/delete/{category}', [CategoryController::class,'destroy'])
+Route::post('/categories/delete/{category}', [CategoryController::class,'destroy'])
     ->name('categories.delete');
 
 Route::get('/products', [ProductController::class,'index'])
@@ -44,10 +44,10 @@ Route::post('/products/create', [ProductController::class,'store'])
 Route::get('/products/edit/{product}', [ProductController::class,'edit'])
     ->name('products.edit');
 
-Route::get('/products/edit/{product}', [ProductController::class,'update'])
+Route::post('/products/edit/{product}', [ProductController::class,'update'])
     ->name('products.edit');
 
-Route::get('/products/delete/{product}', [ProductController::class,'destroy'])
+Route::post('/products/delete/{product}', [ProductController::class,'destroy'])
     ->name('products.delete');
 
 Route::get('/', function () {

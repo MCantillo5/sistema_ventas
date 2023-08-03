@@ -25,7 +25,7 @@
                 {{ $product->category->name }}
             </td>
             <td>
-                <a href="{{ route('$products.edit', $product) }}">Edit</a>
+                <a href="{{ route('products.edit', $product) }}">Edit</a>
 
                 <form action="{{ route('products.delete', $product) }}" method="post">
                     @csrf

@@ -1,6 +1,6 @@
 <div style="margin-botton: 1em">
-    <a href="{{ route('products.create') }}">Product list</a>
-</div>+
+    <a href="{{ route('products.index') }}">Product list</a>
+</div>
 
 <h1>Create Product</h1>
 
@@ -8,7 +8,7 @@
     <div style="color: green;">{{ session('massage') }}</div>
 @endif
 
-<form action="{{ route('products.create') }}}" method="post">
+<form action="{{ route('products.create') }}" method="post">
     @csrf
     <div  style="margin-bottom: 1em;">
         <label for="name">Name</label>

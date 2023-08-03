@@ -1,6 +1,6 @@
 <div style="margin-botton: 1em">
     <a href="{{ route('categories.index') }}">Category list</a>
-</div>+
+</div>
 
 <h1>Create Category</h1>
 
@@ -8,7 +8,7 @@
     <div style="color: green;">{{ session('message') }}</div>
 @endif
 
-<form action="{{ route('categories.create') }}}" method="post">
+<form action="{{ route('categories.create') }}" method="post">
     @csrf
     <div  style="margin-bottom: 1em;">
         <label for="name">Name</label>

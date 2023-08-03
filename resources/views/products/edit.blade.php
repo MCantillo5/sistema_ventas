@@ -18,7 +18,7 @@
         @enderror
     </div>
     <div style="margin-bottom: 1em;">
-        <label for="price">Description</label>
+        <label for="price">Price</label>
         <input type="text" name="price" id="price" placeholder="Enter price" value="{{  $product->price }}">
         @error('price')
         <div style="color: red;">{{ $massage }}</div>
@@ -26,7 +26,7 @@
     </div>
     <div style="margin-bottom: 1em">
         <label for="category_id">Category</label>
-        <select name="$category_id" id="category_id">
+        <select name="  category_id" id="category_id">
             <option value="">Select</option>
             @foreach($categories as $category)
                 <option

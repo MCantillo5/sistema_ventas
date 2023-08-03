@@ -50,6 +50,25 @@ Route::post('/products/edit/{product}', [ProductController::class,'update'])
 Route::post('/products/delete/{product}', [ProductController::class,'destroy'])
     ->name('products.delete');
 
+Route::get('/departments', [ProductController::class,'index'])
+    ->name('departments.index');
+
+Route::get('/departments/create', [ProductController::class,'create'])
+    ->name('departments.create');
+
+Route::post('/departments/create', [ProductController::class,'store'])
+    ->name('departments.create');
+
+Route::get('/departments/edit/{department}', [ProductController::class,'edit'])
+    ->name('departments.edit');
+
+Route::post('/departments/edit/{department}', [ProductController::class,'update'])
+    ->name('departments.edit');
+
+Route::post('/departments/delete/{department}', [ProductController::class,'destroy'])
+    ->name('departments.delete');
+
 Route::get('/', function () {
     return view('welcome');
+
 });

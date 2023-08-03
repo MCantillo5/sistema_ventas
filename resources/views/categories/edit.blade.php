@@ -8,7 +8,7 @@
     <div style="color: green;">{{ session('message') }}</div>
 @endif
 
-<form action="{{ route('categories.edt', $category) }}" method="post">
+<form action="{{ route('categories.edit', $category) }}" method="post">
     @csrf
     <div style="margin-bottom: 1em;">
         <label for="name">Name</label>

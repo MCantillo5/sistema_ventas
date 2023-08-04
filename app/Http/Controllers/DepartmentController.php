@@ -9,7 +9,7 @@ class DepartmentController extends Controller
     public function index()
     {
         return view('departments.index',[
-            'departments' => Category::paginate()
+            'departments' => Department::paginate()
         ]);
     }
 
@@ -24,7 +24,7 @@ class DepartmentController extends Controller
             'name' => 'required|max:255'
         ]);
 
-        Category::create($data);
+        Department::create($data);
 
         return back()->with('massage', 'Department created successfully');
     }

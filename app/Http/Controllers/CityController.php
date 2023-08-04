@@ -10,13 +10,13 @@ class CityController extends Controller
     public function index()
     {
         return view('cities.index',[
-            'cities' => Product::paginate(10)
+            'cities' => City::paginate(10)
         ]);
     }
 
     public function create()
     {
-        $categories = City::orderBy('name')->get();
+        $departments = Department::orderBy('name')->get();
         return view ('cities.create', compact('departments'));
     }
 
@@ -27,14 +27,14 @@ class CityController extends Controller
             'department_id' => 'required|integer',
         ]);
 
-        Product::create($data);
+        City::create($data);
 
         return back()->with('message', 'City created.');
     }
 
     public function edit(City $city)
     {
-        $categories = City::orderBy('name')->get();
+        $departments = Department::orderBy('name')->get();
         return view('cities.edit', compact('city', 'departments'));
     }
 
@@ -42,7 +42,7 @@ class CityController extends Controller
     {
         $data = $request->validate([
             'name' => 'required|max:255',
-            'city_id' => 'required|integer',
+            'department_id' => 'required|integer',
         ]);
 
         $city->update($data);

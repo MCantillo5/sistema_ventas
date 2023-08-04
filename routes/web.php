@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\CityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,23 +52,42 @@ Route::post('/products/edit/{product}', [ProductController::class,'update'])
 Route::post('/products/delete/{product}', [ProductController::class,'destroy'])
     ->name('products.delete');
 
-Route::get('/departments', [ProductController::class,'index'])
+Route::get('/departments', [DepartmentController::class,'index'])
     ->name('departments.index');
 
-Route::get('/departments/create', [ProductController::class,'create'])
+Route::get('/departments/create', [DepartmentController::class,'create'])
     ->name('departments.create');
 
-Route::post('/departments/create', [ProductController::class,'store'])
+Route::post('/departments/create', [DepartmentController::class,'store'])
     ->name('departments.create');
 
-Route::get('/departments/edit/{department}', [ProductController::class,'edit'])
+Route::get('/departments/edit/{department}', [DepartmentController::class,'edit'])
     ->name('departments.edit');
 
-Route::post('/departments/edit/{department}', [ProductController::class,'update'])
+Route::post('/departments/edit/{department}', [DepartmentController::class,'update'])
     ->name('departments.edit');
 
-Route::post('/departments/delete/{department}', [ProductController::class,'destroy'])
+Route::post('/departments/delete/{department}', [DepartmentController::class,'destroy'])
     ->name('departments.delete');
+
+Route::get('/cities', [CityController::class,'index'])
+    ->name('cities.index');
+
+Route::get('/cities/create', [CityController::class,'create'])
+    ->name('cities.create');
+
+Route::post('/cities/create', [CityController::class,'store'])
+    ->name('cities.create');
+
+Route::get('/cities/edit/{city}', [CityController::class,'edit'])
+    ->name('cities.edit');
+
+Route::post('/cities/edit/{city}', [CityController::class,'update'])
+    ->name('cities.edit');
+
+Route::post('/cities/delete/{city}', [CityController::class,'destroy'])
+    ->name('cities.delete');
+
 
 Route::get('/', function () {
     return view('welcome');

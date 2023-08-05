@@ -11,6 +11,7 @@
         <td>No.</td>
         <td>Name</td>
         <td>Timestamp</td>
+        <td>Action</td>
     </tr>
     </thead>
     <tbody>

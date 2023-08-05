@@ -16,16 +16,15 @@
         @error('name')
         <div style="color:red;">{{ $message }}</div>
         @enderror
-    </div>
     <div style="margin-bottom: 1em;">
         <label for="price">Price</label>
-        <input type="text" name="price" id="price" placeholder="Enter  price" value="{{ old('price') }}">
+        <input type="text" name="price" id="price" placeholder="Enter price" value="{{ old('price') }}">
         @error('price')
-        <div style="color: red;">{{ $message }}</div>
+        <div style="color: red;">{{ $massage }}</div>
         @enderror
     </div>
     <div style="margin-bottom: 1em">
-        <label for="category_id">Category</label>
+        <label for="category_id">City</label>
         <select name="category_id" id="category_id">
             <option value="">Select</option>
             @foreach($categories as $category)

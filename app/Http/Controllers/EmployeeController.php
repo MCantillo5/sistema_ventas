@@ -16,8 +16,8 @@ class EmployeeController extends Controller
 
     public function create()
     {
-        $employees = Employee::orderBy('name')->get();
-        return view ('employees.create', compact('employees'));
+        $cities = City::orderBy('name')->get();
+        return view ('employees.create', compact('cities'));
     }
 
     public function store(Request $request)
@@ -40,8 +40,8 @@ class EmployeeController extends Controller
 
     public function edit(Employee $employee)
     {
-        $employees = Employee::orderBy('name')->get();
-        return view('employees.edit', compact('employee', 'employees'));
+        $cities = City::orderBy('name')->get();
+        return view('employees.edit', compact('employee', 'cities'));
     }
 
     public function update(Employee $employee, Request $request)

@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,9 @@ use App\Http\Controllers\CityController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+//rutas de categorias
 Route::get('/categories', [CategoryController::class,'index'])
     ->name('categories.index');
 
@@ -33,6 +37,9 @@ Route::post('/categories/edit/{category}', [CategoryController::class,'update'])
 
 Route::post('/categories/delete/{category}', [CategoryController::class,'destroy'])
     ->name('categories.delete');
+
+
+//rutas de productos
 
 Route::get('/products', [ProductController::class,'index'])
     ->name('products.index');
@@ -52,6 +59,8 @@ Route::post('/products/edit/{product}', [ProductController::class,'update'])
 Route::post('/products/delete/{product}', [ProductController::class,'destroy'])
     ->name('products.delete');
 
+//rutas de departamentos
+
 Route::get('/departments', [DepartmentController::class,'index'])
     ->name('departments.index');
 
@@ -70,6 +79,8 @@ Route::post('/departments/edit/{department}', [DepartmentController::class,'upda
 Route::post('/departments/delete/{department}', [DepartmentController::class,'destroy'])
     ->name('departments.delete');
 
+//rutas de ciudades
+
 Route::get('/cities', [CityController::class,'index'])
     ->name('cities.index');
 
@@ -87,6 +98,26 @@ Route::post('/cities/edit/{city}', [CityController::class,'update'])
 
 Route::post('/cities/delete/{city}', [CityController::class,'destroy'])
     ->name('cities.delete');
+
+//rutuas de empleados
+
+Route::get('/employees', [EmployeeController::class,'index'])
+    ->name('employees.index');
+
+Route::get('/employees/create', [EmployeeController::class,'create'])
+    ->name('employees.create');
+
+Route::post('/employees/create', [EmployeesController::class,'store'])
+    ->name('employees.create');
+
+Route::get('/employees/edit/{employee}', [EmployeesController::class,'edit'])
+    ->name('employees.edit');
+
+Route::post('/employees/edit/{employee}', [EmployeesController::class,'update'])
+    ->name('employees.edit');
+
+Route::post('/employees/delete/{employee}', [EmployeesController::class,'destroy'])
+    ->name('employees.delete');
 
 
 Route::get('/', function () {

@@ -27,7 +27,7 @@ class CategoryController extends Controller
 
         Category::create($data);
 
-        return back()->with('massage', 'Category created successfully');
+        return back()->with('message', 'Category created successfully');
     }
 
     public function edit(Category $category)
@@ -43,7 +43,7 @@ class CategoryController extends Controller
 
         $category->update($data);
 
-        return back()->with('massage', 'Category updated.');
+        return back()->with('message', 'Category updated.');
     }
 
     public function destroy(Category $category)

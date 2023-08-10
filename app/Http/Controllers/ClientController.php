@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 use App\Models\City;
-use App\Models\Employee;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
-class EmployeeController extends Controller
+class ClientController extends Controller
 {
     public function index()
     {
-        return view('employees.index',[
-            'employees' => Employee::paginate(10)
+        return view('clients.index',[
+            'clients' => Client::paginate(10)
         ]);
     }
 
     public function create()
     {
         $cities = City::orderBy('name')->get();
-        return view ('employees.create', compact('cities'));
+        return view ('clients.create', compact('cities'));
     }
 
     public function store(Request $request)
@@ -26,47 +26,43 @@ class EmployeeController extends Controller
             'name' => 'required|max:255',
             'lastname' => 'required|max:255',
             'email' => 'required|max:255',
-            'address' => 'required|max:255',
             'document' => 'required|max:255',
             'phone' => 'required|max:255',
-            'post' => 'required|max:255',
             'city_id' => 'required|integer',
         ]);
 
-        Employee::create($data);
+        Client::create($data);
 
-        return back()->with('message', 'Employee created.');
+        return back()->with('message', 'Client created.');
     }
 
-    public function edit(Employee $employee)
+    public function edit(Client $client)
     {
         $cities = City::orderBy('name')->get();
-        return view('employees.edit', compact('employee', 'cities'));
+        return view('clients.edit', compact('client', 'cities'));
     }
 
-    public function update(Employee $employee, Request $request)
+    public function update(Client $client, Request $request)
     {
         $data = $request->validate([
             'name' => 'required|max:255',
             'lastname' => 'required|max:255',
             'email' => 'required|max:255',
-            'address' => 'required|max:255',
             'document' => 'required|max:255',
             'phone' => 'required|max:255',
-            'post' => 'required|max:255',
             'city_id' => 'required|integer',
         ]);
 
-        $employee->update($data);
+        $client->update($data);
 
-        return back()->with('message', 'Employee updated.');
+        return back()->with('message', 'Client updated.');
     }
 
-    public function destroy(Employee $employee)
+    public function destroy(Client $client)
     {
-        $employee->delete();
+        $client->delete();
 
-        return back()->with('message', 'Employee deleted.');
+        return back()->with('message', 'Client deleted.');
 
     }
 }

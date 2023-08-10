@@ -26,7 +26,7 @@ class DepartmentController extends Controller
 
         Department::create($data);
 
-        return back()->with('massage', 'Department created successfully');
+        return back()->with('message', 'Department created successfully');
     }
 
     public function edit(Department $department)
@@ -41,7 +41,7 @@ class DepartmentController extends Controller
 
         $department->update($data);
 
-        return back()->with('massage', 'Department updated.');
+        return back()->with('message', 'Department updated.');
     }
 
     public function destroy(Department $department)

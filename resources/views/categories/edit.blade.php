@@ -22,7 +22,7 @@
         <input type="text" name="description" id="description" placeholder="Enter description">
                value="{{ $category->description }}">
         @error('description')
-        <div style="color: red;">{{ $massage }}</div>
+        <div style="color: red;">{{ $message }}</div>
         @enderror
     </div>
     <div>

@@ -1,8 +1,8 @@
 <div><a href="/">Home</a></div>
 <a href="{{ route('cities.create') }}">New City</a>
 
-@if(session('massage'))
-    <div style="color: green;">{{ session('massage') }}</div>
+@if(session('message'))
+    <div style="color: green;">{{ session('message') }}</div>
 @endif
 
 <table cellpadding="10" cellspacing="1" border="1">

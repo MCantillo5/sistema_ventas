@@ -47,14 +47,14 @@ class CityController extends Controller
 
         $city->update($data);
 
-        return back()->with('massage', 'City updated.');
+        return back()->with('message', 'City updated.');
     }
 
     public function destroy(City $city)
     {
         $city->delete();
 
-        return back()->with('massage', 'City deleted.');
+        return back()->with('message', 'City deleted.');
 
     }
 }

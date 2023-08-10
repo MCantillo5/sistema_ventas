@@ -1,18 +1,18 @@
 <div style="margin-botton: 1em">
-    <a href="{{ route('employees.index') }}">Employee list</a>
+    <a href="{{ route('providers.index') }}">Provider list</a>
 </div>
 
-<h1>Create Employee</h1>
+<h1>Create Provider</h1>
 
 @if(session('massage'))
     <div style="color: green;">{{ session('massage') }}</div>
 @endif
 
-<form action="{{ route('employees.create') }}" method="post">
+<form action="{{ route('providers.create') }}" method="post">
     @csrf
     <div  style="margin-bottom: 1em;">
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" placeholder="Enter employee" value="{{ old('name') }}">
+        <input type="text" name="name" id="name" placeholder="Enter Name" value="{{ old('name') }}">
         @error('name')
         <div style="color:red;">{{ $message }}</div>
         @enderror
@@ -52,13 +52,6 @@
         <div style="color: red;">{{ $message }}</div>
         @enderror
     </div>
-    <div style="margin-bottom: 1em;">
-        <label for="post">Post</label>
-        <input type="text" name="post" id="post" placeholder="Enter post" value="{{ old('post') }}">
-        @error('post')
-        <div style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
     <div style="margin-bottom: 1em">
         <label for="city_id">City</label>
         <select name="city_id" id="city_id">
@@ -73,6 +66,23 @@
             @endforeach
         </select>
         @error('city_id')
+        <div style="color: red;">{{ $message }}</div>
+        @enderror
+    </div>
+    <div style="margin-bottom: 1em">
+        <label for="product_id">Product</label>
+        <select name="product_id" id="product_id">
+            <option value="">Select</option>
+            @foreach($products as $product)
+                <option
+                    @if($product->id === (int)old('product_id'))
+                        selected
+                    @endif
+                    value="{{ $product->id }}">{{ $product->name }}
+                </option>
+            @endforeach
+        </select>
+        @error('product_id')
         <div style="color: red;">{{ $message }}</div>
         @enderror
     </div>

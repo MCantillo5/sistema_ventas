@@ -21,7 +21,7 @@
         <label for="price">Price</label>
         <input type="text" name="price" id="price" placeholder="Enter price" value="{{  $product->price }}">
         @error('price')
-        <div style="color: red;">{{ $massage }}</div>
+        <div style="color: red;">{{ $message }}</div>
         @enderror
     </div>
     <div style="margin-bottom: 1em">

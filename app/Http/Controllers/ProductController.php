@@ -9,6 +9,7 @@ class ProductController extends Controller
 {
     public function index()
     {
+        //dd(Product::paginate(10));
         return view('products.index',[
             'products' => Product::paginate(10)
         ]);
@@ -49,14 +50,14 @@ class ProductController extends Controller
 
         $product->update($data);
 
-        return back()->with('massage', 'Product updated.');
+        return back()->with('message', 'Product updated.');
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
 
-        return back()->with('massage', 'Product deleted.');
+        return back()->with('message', 'Product deleted.');
 
     }
 }

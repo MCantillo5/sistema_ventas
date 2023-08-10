@@ -4,8 +4,8 @@
 
 <h1>Create City</h1>
 
-@if(session('massage'))
-    <div style="color: green;">{{ session('massage') }}</div>
+@if(session('message'))
+    <div style="color: green;">{{ session('message') }}</div>
 @endif
 
 <form action="{{ route('cities.create') }}" method="post">

@@ -18,10 +18,8 @@ class ProviderController extends Controller
     public function create()
     {
         $cities = City::orderBy('name')->get();
-        return view ('employees.create', compact('cities'));
-
         $products = Product::orderBy('name')->get();
-        return view ('providers.create', compact('products'));
+        return view ('providers.create', compact('cities', 'products'));
     }
 
     public function store(Request $request)

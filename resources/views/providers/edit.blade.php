@@ -58,7 +58,7 @@
             <option value="">Select</option>
             @foreach($cities as $city)
                 <option
-                    @if($city->id === (int)$employee->city_id)
+                    @if($city->id === (int)$provider->city_id)
                         selected
                     @endif
                     value="{{ $city->id }}">{{ $city->name }}</option>

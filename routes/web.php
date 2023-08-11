@@ -8,6 +8,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProviderController;
+use App\Http\Controllers\BillController;
 
 /*
 |--------------------------------------------------------------------------
@@ -160,6 +161,26 @@ Route::post('/providers/edit/{provider}', [ProviderController::class,'update'])
 
 Route::post('/providers/delete/{provider}', [ProviderController::class,'destroy'])
     ->name('providers.delete');
+
+//rutas de facturas
+
+Route::get('/bills', [BillController::class,'index'])
+    ->name('bills.index');
+
+Route::get('/bills/create', [BillController::class,'create'])
+    ->name('bills.create');
+
+Route::post('/bills/create', [BillController::class,'store'])
+    ->name('bills.create');
+
+Route::get('/bills/edit/{bill}', [BillController::class,'edit'])
+    ->name('bills.edit');
+
+Route::post('/bills/edit/{bill}', [BillController::class,'update'])
+    ->name('bills.edit');
+
+Route::post('/bills/delete/{bill}', [BillController::class,'destroy'])
+    ->name('bills.delete');
 
 
 Route::get('/', function () {

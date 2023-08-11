@@ -43,10 +43,8 @@ class ProviderController extends Controller
     public function edit(Provider $provider)
     {
         $cities = City::orderBy('name')->get();
-        return view('employees.edit', compact('employee', 'cities'));
-
         $products = Product::orderBy('name')->get();
-        return view('providers.edit', compact('provider', 'products'));
+        return view('providers.edit', compact('provider', 'cities', 'products'));
     }
 
     public function update(Provider $provider, Request $request)

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Models\City;
-use App\Models\Product;
 use App\Models\Provider;
 use Illuminate\Http\Request;
 
@@ -18,8 +17,7 @@ class ProviderController extends Controller
     public function create()
     {
         $cities = City::orderBy('name')->get();
-        $products = Product::orderBy('name')->get();
-        return view ('providers.create', compact('cities', 'products'));
+        return view ('providers.create', compact('cities'));
     }
 
     public function store(Request $request)
@@ -32,7 +30,6 @@ class ProviderController extends Controller
             'document' => 'required|max:255',
             'phone' => 'required|max:255',
             'city_id' => 'required|integer',
-            'product_id' => 'required|integer',
         ]);
 
         Provider::create($data);
@@ -43,8 +40,7 @@ class ProviderController extends Controller
     public function edit(Provider $provider)
     {
         $cities = City::orderBy('name')->get();
-        $products = Product::orderBy('name')->get();
-        return view('providers.edit', compact('provider', 'cities', 'products'));
+        return view('providers.edit', compact('provider', 'cities'));
     }
 
     public function update(Provider $provider, Request $request)
@@ -57,7 +53,6 @@ class ProviderController extends Controller
             'document' => 'required|max:255',
             'phone' => 'required|max:255',
             'city_id' => 'required|integer',
-            'product_id' => 'required|integer',
         ]);
 
         $provider->update($data);

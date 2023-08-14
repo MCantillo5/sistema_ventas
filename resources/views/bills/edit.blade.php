@@ -1,5 +1,5 @@
 <div style="margin-bottom: 1em">
-    <a href="{{ route('providers.index') }}">Provider List</a>
+    <a href="{{ route('bills.index') }}">Bill List</a>
 </div>
 
 <h1>Edit Provider</h1>
@@ -8,7 +8,7 @@
     <div style="color: green;">{{ session('message') }}</div>
 @endif
 
-<form action="{{ route('providers.edit', $provider) }}" method="post">
+<form action="{{ route('bills.edit', $bill) }}" method="post">
     @csrf
     <div style="margin-bottom: 1em;">
         <label for="subtotal">Subtotal</label>

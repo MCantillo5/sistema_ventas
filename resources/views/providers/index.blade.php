@@ -16,7 +16,6 @@
         <td>Document</td>
         <td>Phone</td>
         <td>City</td>
-        <td>Product</td>
         <td>Timestamp</td>
         <td>Action</td>
     </tr>
@@ -32,7 +31,6 @@
             <td>{{ $provider->document }}</td>
             <td>{{ $provider->phone }}</td>
             <td>{{ $provider->city->name }}</td>
-            <td>{{ $provider->product->name }}</td>
             <td>{{ $provider->created_at->format( 'F d, Y') }}</td>
             <td>
                 <a href="{{ route('providers.edit', $provider) }}">Edit</a>

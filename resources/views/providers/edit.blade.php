@@ -68,22 +68,6 @@
         <div style="color: red;">{{  $message }}</div>
         @enderror
     </div>
-    <div style="margin-bottom: 1em">
-        <label for="product_id">Product</label>
-        <select name="product_id" id="product_id">
-            <option value="">Select</option>
-            @foreach($products as $product)
-                <option
-                    @if($product->id === (int)$provider->city_id)
-                        selected
-                    @endif
-                    value="{{ $product->id }}">{{ $product->name }}</option>
-            @endforeach
-        </select>
-        @error('product_id')
-        <div style="color: red;">{{  $message }}</div>
-        @enderror
-    </div>
     <div>
         <button type="submit">Submit</button>
     </div>

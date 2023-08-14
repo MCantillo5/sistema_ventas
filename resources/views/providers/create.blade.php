@@ -4,8 +4,8 @@
 
 <h1>Create Provider</h1>
 
-@if(session('massage'))
-    <div style="color: green;">{{ session('massage') }}</div>
+@if(session('message'))
+    <div style="color: green;">{{ session('message') }}</div>
 @endif
 
 <form action="{{ route('providers.create') }}" method="post">
@@ -66,23 +66,6 @@
             @endforeach
         </select>
         @error('city_id')
-        <div style="color: red;">{{ $message }}</div>
-        @enderror
-    </div>
-    <div style="margin-bottom: 1em">
-        <label for="product_id">Product</label>
-        <select name="product_id" id="product_id">
-            <option value="">Select</option>
-            @foreach($products as $product)
-                <option
-                    @if($product->id === (int)old('product_id'))
-                        selected
-                    @endif
-                    value="{{ $product->id }}">{{ $product->name }}
-                </option>
-            @endforeach
-        </select>
-        @error('product_id')
         <div style="color: red;">{{ $message }}</div>
         @enderror
     </div>

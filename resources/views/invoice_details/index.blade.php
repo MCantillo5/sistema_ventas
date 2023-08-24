@@ -1,5 +1,5 @@
 <div><a href="/">Home</a></div>
-<a href="{{ route('invoice_details.create') }}">New InvoiceDetail</a>
+<a href="{{ route('invoice_details.create') }}">New Invoice Detail</a>
 
 @if(session('message'))
     <div style="color: green;">{{ session('message') }}</div>

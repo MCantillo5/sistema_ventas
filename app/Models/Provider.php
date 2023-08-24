@@ -11,6 +11,8 @@ class Provider extends Model
 
     protected $fillable = ['city_id', 'name', 'lastname', 'email', 'address', 'document', 'phone'];
 
+
+
     public function city()
     {
         return $this->belongsTo(City::class);

@@ -33,8 +33,8 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div>
-                                    <button type="submit">Submit</button>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-secondary" type="submit">Edit Category</button>
                                 </div>
                             </form>
                         </div>
